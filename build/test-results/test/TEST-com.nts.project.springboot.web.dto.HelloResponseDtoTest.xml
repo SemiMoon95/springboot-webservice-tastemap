@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.nts.project.springboot.web.dto.HelloResponseDtoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-20T08:19:36" hostname="DESKTOP-TG1CJTM" time="0.004">
+<testsuite name="com.nts.project.springboot.web.dto.HelloResponseDtoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-24T07:29:29" hostname="DESKTOP-TG1CJTM" time="0.004">
   <properties/>
   <testcase name="lombok_function_test" classname="com.nts.project.springboot.web.dto.HelloResponseDtoTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
