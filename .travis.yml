@@ -14,6 +14,22 @@ cache:
 
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r springboot-webservice-tastemap
+  - mkdir -p deploy
+  - mv springboot-webservice-tastemap.zip deploy/springboot-webservice-tastemap.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings
+    bucket: springboot-webservice-tastemap-build # S3 bucket
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip파일 접근을 private로 설정
+    local_dir: deploy # befor_deploy에서 생성한 디렉토리
+    wait-until-deployed: true
+
 # CI 실행완료 시 메일로 알람
 notifications:
   email:
