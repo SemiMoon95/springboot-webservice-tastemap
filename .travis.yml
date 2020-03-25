@@ -18,7 +18,7 @@ before_install:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r springboot-webservice-tastemap
+  - zip -r springboot-webservice-tastemap *
   - mkdir -p deploy
   - mv springboot-webservice-tastemap.zip deploy/springboot-webservice-tastemap.zip
 
