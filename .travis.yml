@@ -12,10 +12,10 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-script: "./gradlew clean build"
-
 before_install:
   - chmod +x gradlew
+
+script: "./gradlew clean build"
 
 before_deploy:
   - mkdir -p before-deploy #zip에 포함시킬 파일 디렉토리 생성
