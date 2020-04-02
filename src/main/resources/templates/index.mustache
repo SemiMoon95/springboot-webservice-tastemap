@@ -1,19 +1,28 @@
 {{>layout/header}}
-    <h1>스프링부트로 시작하는 웹 서비스 Ver.02</h1>
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-6">
-                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-                {{#userName}}
-                    Logged in as: <span id="user">{{userName}}</span>
+    <div class="row">
+        <div class="login-buttons">
+            {{#userName}}
+                <div class="login-message">
+                    [ <span id="user">{{userName}}</span> ]님, 반갑습니다!
                     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                {{/userName}}
-                {{^userName}}
-                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-                {{/userName}}
-            </div>
+                </div>
+            {{/userName}}
+            {{^userName}}
+                <div class="login-menubar">
+                    <ul>
+                        <li><a href="" id="login">LOGIN</a>
+                            <ul>
+                                <li><a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a></li>
+                                <li><a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            {{/userName}}
         </div>
+    </div>
+    <h1 class="index-title">TASTE MAP</h1>
+    <div class="col-md-12 posts">
         <br>
         <table class="table table-horizontal table-bordered">
             <thead class="thead-strong">
@@ -35,5 +44,8 @@
             {{/posts}}
             </tbody>
         </table>
+        <div class="col-md-6">
+            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        </div>
     </div>
 {{>layout/footer}}
